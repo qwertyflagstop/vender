@@ -23,7 +23,10 @@ class ViewController: UIViewController {
         captureSession.sessionPreset = AVCaptureSessionPreset1280x720
         
         let devices = AVCaptureDevice.devices()
+        var Vender = Vending()
+        println(Vender.dictionary())
         
+        /*
         for device in devices {
 
             if (device.hasMediaType(AVMediaTypeVideo)) {
@@ -47,7 +50,7 @@ class ViewController: UIViewController {
             beginSession()
         }
         
-        
+        */
     }
     
     
