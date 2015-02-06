@@ -1,0 +1,74 @@
+{
+    "Ritter Arena Lobby" : {
+        "meals" : false,
+        "snacks" : false,
+        "soda" : true,
+        "latitude" : 43.08491,
+        "longitude" : -77.67383,
+        "floor" : 1
+    },
+    "Feild House Track" : {
+        "meals" : true,
+        "snacks" : true,
+        "soda" : true,
+        "latitude" : 43.08562,
+        "longitude" : -77.67233,
+        "floor" : 0
+    },
+    "RITZ Sports Zone" : {
+        "floor" : 1,
+        "meals" : false,
+        "soda" : true,
+        "latitude" : 43.08396,
+        "longitude" : -77.67448,
+        "snacks" : true
+    },
+    "Campus Center Downstairs" : {
+        "snacks" : false,
+        "floor" : 1,
+        "soda" : true,
+        "latitude" : 43.08415,
+        "longitude" : -77.674,
+        "meals" : false
+    },
+    "Campus Center" : {
+        "snacks" : true,
+        "floor" : 3,
+        "soda" : true,
+        "latitude" : 43.08422,
+        "longitude" : -77.6739,
+        "meals" : false
+    },
+    "Field House Gym " : {
+        "snacks" : true,
+        "floor" : 1,
+        "soda" : true,
+        "latitude" : 43.0845,
+        "longitude" : -77.67214,
+        "meals" : false
+    },
+    "Nick's Room" : {
+        "floor" : 1,
+        "meals" : true,
+        "soda" : true,
+        "latitude" : 43.08422,
+        "longitude" : -77.66905,
+        "snacks" : true
+    },
+    "Ritter Arena Entrance " : {
+        "snacks" : true,
+        "floor" : 1,
+        "soda" : true,
+        "latitude" : 43.08471,
+        "longitude" : -77.67373000000001,
+        "meals" : false
+    },
+    "Field House Track" : {
+        "floor" : 1,
+        "meals" : false,
+        "soda" : true,
+        "latitude" : 43.08543,
+        "longitude" : -77.6724,
+        "snacks" : true
+    }
+}

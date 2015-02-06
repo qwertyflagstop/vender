@@ -210,6 +210,7 @@
 				0170FD1B1A842AA9007D4B76 /* Main.storyboard in Resources */,
 				0170FD201A842AA9007D4B76 /* LaunchScreen.xib in Resources */,
 				0170FD1D1A842AA9007D4B76 /* Images.xcassets in Resources */,
+				0170FD391A843FFE007D4B76 /* vending.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
