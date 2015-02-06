@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         var Vender = Vending()
         println(Vender.dictionary())
         
-        /*
+        
         for device in devices {
             if (device.hasMediaType(AVMediaTypeVideo)) {
                 if(device.position == AVCaptureDevicePosition.Back) {
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    //EYE
     func beginSession() {
         var err : NSError? = nil
         captureSession.addInput(AVCaptureDeviceInput(device: captureDevice, error: &err))
