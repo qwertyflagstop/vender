@@ -13,6 +13,7 @@
 		0170FD1D1A842AA9007D4B76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0170FD1C1A842AA9007D4B76 /* Images.xcassets */; };
 		0170FD201A842AA9007D4B76 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0170FD1E1A842AA9007D4B76 /* LaunchScreen.xib */; };
 		0170FD2C1A842AA9007D4B76 /* RITVenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0170FD2B1A842AA9007D4B76 /* RITVenderTests.swift */; };
+		0170FD361A842CA9007D4B76 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170FD351A842CA9007D4B76 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		0170FD251A842AA9007D4B76 /* RITVenderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RITVenderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0170FD2A1A842AA9007D4B76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0170FD2B1A842AA9007D4B76 /* RITVenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RITVenderTests.swift; sourceTree = "<group>"; };
+		0170FD351A842CA9007D4B76 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0170FD361A842CA9007D4B76 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		0170FD071A842AA8007D4B76 = {
 			isa = PBXGroup;
 			children = (
+				0170FD371A842CBA007D4B76 /* Frameworks */,
 				0170FD121A842AA9007D4B76 /* RITVender */,
 				0170FD281A842AA9007D4B76 /* RITVenderTests */,
 				0170FD111A842AA9007D4B76 /* Products */,
@@ -110,6 +114,14 @@
 				0170FD2A1A842AA9007D4B76 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0170FD371A842CBA007D4B76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0170FD351A842CA9007D4B76 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
