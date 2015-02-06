@@ -33,17 +33,16 @@ class ViewController: UIViewController {
                     if let videoformats = captureDevice?.formats {
                         var fastFormat:AVCaptureDeviceFormat;
                         for captureFormat in videoformats{
-                            println("inner")
-                            if(captureFormat.maxFrameRate>=59&&captureFormat.maxFrameRate<=61.0){
-                                println("here /(captureFormat)")
-                                fastFormat = captureFormat as AVCaptureDeviceFormat;
-                            }
+                           if(captureFormat.maxFrameRate>=59.0){
+                               captureDevice?.activeFormat = captureFormat as AVCaptureDeviceFormat;
+                           }
                         }
                     }
                 }
             }
         }
         if captureDevice != nil {
+            println(captureDevice?.activeFormat);
             beginSession()
         }
         
