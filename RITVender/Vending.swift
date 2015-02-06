@@ -10,6 +10,7 @@ import Foundation
 
 class Vending{
     func getString() ->NSString{
+        //String Function
         if let filePath = NSBundle.mainBundle().pathForResource("vending",ofType:"json") {
             return String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding, error: nil)!
         } else {
