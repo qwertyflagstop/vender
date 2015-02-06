@@ -9,7 +9,7 @@
 import Foundation
 
 class Vending{
-    func VendingData: Dictionary{
+   // func VendingData: Dictionary{
         
-    }
+    //}
 }
