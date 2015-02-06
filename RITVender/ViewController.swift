@@ -11,9 +11,11 @@ import AVFoundation
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var cameraView: UIView!
     let captureSession: AVCaptureSession = AVCaptureSession();
     var captureDevice : AVCaptureDevice?
+    var previewLayer : AVCaptureVideoPreviewLayer?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,15 +31,39 @@ class ViewController: UIViewController {
                 if(device.position == AVCaptureDevicePosition.Back) {
                     captureDevice = device as? AVCaptureDevice
                     if let videoformats = captureDevice?.formats {
+                        var fastFormat:AVCaptureDeviceFormat;
                         for captureFormat in videoformats{
-                            
+                            println("inner")
+                            if(captureFormat.maxFrameRate>=59&&captureFormat.maxFrameRate<=61.0){
+                                println("here /(captureFormat)")
+                                fastFormat = captureFormat as AVCaptureDeviceFormat;
+                            }
                         }
                     }
                 }
             }
         }
+        if captureDevice != nil {
+            beginSession()
+        }
         
         
+    }
+    
+    
+    func beginSession() {
+        var err : NSError? = nil
+        captureSession.addInput(AVCaptureDeviceInput(device: captureDevice, error: &err))
+        
+        if err != nil {
+            println("error: \(err?.localizedDescription)")
+        }
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        self.view.layer.addSublayer(previewLayer)
+        previewLayer?.frame = self.view.layer.frame
+        previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        captureSession.startRunning()
     }
 
     override func didReceiveMemoryWarning() {
