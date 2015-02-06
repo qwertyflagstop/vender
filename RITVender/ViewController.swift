@@ -23,7 +23,10 @@ class ViewController: UIViewController {
         captureSession.sessionPreset = AVCaptureSessionPresetHigh;
     
         let devices = AVCaptureDevice.devices()
+        var Vender = Vending()
+        println(Vender.dictionary())
         
+        /*
         for device in devices {
             if (device.hasMediaType(AVMediaTypeVideo)) {
                 if(device.position == AVCaptureDevicePosition.Back) {

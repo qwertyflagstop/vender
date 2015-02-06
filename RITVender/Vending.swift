@@ -9,6 +9,7 @@
 import Foundation
 
 class Vending{
+    
     func getString() ->NSString{
         //String Function; returns json string
         if let filePath = NSBundle.mainBundle().pathForResource("vending",ofType:"json") {
@@ -16,5 +17,16 @@ class Vending{
         } else {
             return ""
         }
+    }
+    func getDict(fileString: NSString)->NSDictionary{
+        if let fileData = fileString.dataUsingEncoding(NSUTF8StringEncoding){
+            let fileDict = NSJSONSerialization.JSONObjectWithData(fileData, options: nil, error: nil) as NSDictionary
+            return fileDict
+        }
+        return [:]
+    }
+    
+    func dictionary()->NSDictionary{
+        return getDict(getString())
     }
 }
