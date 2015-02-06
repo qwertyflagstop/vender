@@ -14,7 +14,7 @@
 		0170FD201A842AA9007D4B76 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0170FD1E1A842AA9007D4B76 /* LaunchScreen.xib */; };
 		0170FD2C1A842AA9007D4B76 /* RITVenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0170FD2B1A842AA9007D4B76 /* RITVenderTests.swift */; };
 		0170FD361A842CA9007D4B76 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170FD351A842CA9007D4B76 /* AVFoundation.framework */; };
-		0170FD3B1A844292007D4B76 /* vending.json in Resources */ = {isa = PBXBuildFile; fileRef = 0170FD3A1A844292007D4B76 /* vending.json */; };
+		7DADF6021A84425700E539E5 /* vending.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DADF6011A84425700E539E5 /* vending.json */; };
 		7DBE18AF1A843DED00F4A60D /* Vending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBE18AE1A843DED00F4A60D /* Vending.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,7 @@
 		0170FD2A1A842AA9007D4B76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0170FD2B1A842AA9007D4B76 /* RITVenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RITVenderTests.swift; sourceTree = "<group>"; };
 		0170FD351A842CA9007D4B76 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		0170FD3A1A844292007D4B76 /* vending.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vending.json; sourceTree = "<group>"; };
+		7DADF6011A84425700E539E5 /* vending.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vending.json; sourceTree = "<group>"; };
 		7DBE18AE1A843DED00F4A60D /* Vending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vending.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +88,7 @@
 				0170FD151A842AA9007D4B76 /* AppDelegate.swift */,
 				0170FD171A842AA9007D4B76 /* ViewController.swift */,
 				7DBE18AE1A843DED00F4A60D /* Vending.swift */,
-				0170FD3A1A844292007D4B76 /* vending.json */,
+				7DADF6011A84425700E539E5 /* vending.json */,
 				0170FD191A842AA9007D4B76 /* Main.storyboard */,
 				0170FD1C1A842AA9007D4B76 /* Images.xcassets */,
 				0170FD1E1A842AA9007D4B76 /* LaunchScreen.xib */,
@@ -213,7 +213,7 @@
 				0170FD1B1A842AA9007D4B76 /* Main.storyboard in Resources */,
 				0170FD201A842AA9007D4B76 /* LaunchScreen.xib in Resources */,
 				0170FD1D1A842AA9007D4B76 /* Images.xcassets in Resources */,
-				0170FD3B1A844292007D4B76 /* vending.json in Resources */,
+				7DADF6021A84425700E539E5 /* vending.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
