@@ -14,6 +14,7 @@
 		0170FD201A842AA9007D4B76 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0170FD1E1A842AA9007D4B76 /* LaunchScreen.xib */; };
 		0170FD2C1A842AA9007D4B76 /* RITVenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0170FD2B1A842AA9007D4B76 /* RITVenderTests.swift */; };
 		0170FD361A842CA9007D4B76 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170FD351A842CA9007D4B76 /* AVFoundation.framework */; };
+		7DBE18AF1A843DED00F4A60D /* Vending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBE18AE1A843DED00F4A60D /* Vending.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		0170FD2A1A842AA9007D4B76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0170FD2B1A842AA9007D4B76 /* RITVenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RITVenderTests.swift; sourceTree = "<group>"; };
 		0170FD351A842CA9007D4B76 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7DBE18AE1A843DED00F4A60D /* Vending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vending.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				0170FD151A842AA9007D4B76 /* AppDelegate.swift */,
 				0170FD171A842AA9007D4B76 /* ViewController.swift */,
+				7DBE18AE1A843DED00F4A60D /* Vending.swift */,
 				0170FD191A842AA9007D4B76 /* Main.storyboard */,
 				0170FD1C1A842AA9007D4B76 /* Images.xcassets */,
 				0170FD1E1A842AA9007D4B76 /* LaunchScreen.xib */,
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DBE18AF1A843DED00F4A60D /* Vending.swift in Sources */,
 				0170FD181A842AA9007D4B76 /* ViewController.swift in Sources */,
 				0170FD161A842AA9007D4B76 /* AppDelegate.swift in Sources */,
 			);
@@ -417,6 +421,7 @@
 				0170FD311A842AA9007D4B76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0170FD321A842AA9007D4B76 /* Build configuration list for PBXNativeTarget "RITVenderTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				0170FD341A842AA9007D4B76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
