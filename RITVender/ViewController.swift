@@ -20,33 +20,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        captureSession.sessionPreset = AVCaptureSessionPreset1280x720
-        
+        captureSession.sessionPreset = AVCaptureSessionPresetHigh;
+    
         let devices = AVCaptureDevice.devices()
         
         for device in devices {
-
             if (device.hasMediaType(AVMediaTypeVideo)) {
-
                 if(device.position == AVCaptureDevicePosition.Back) {
                     captureDevice = device as? AVCaptureDevice
-                    if let videoformats = captureDevice?.formats {
-                        var fastFormat:AVCaptureDeviceFormat;
-                        for captureFormat in videoformats{
-                           if(captureFormat.maxFrameRate>=59.0){
-                               captureDevice?.activeFormat = captureFormat as AVCaptureDeviceFormat;
-                           }
-                        }
-                    }
                 }
             }
         }
+        
+        
         if captureDevice != nil {
-            println(captureDevice?.activeFormat);
             beginSession()
         }
-        
-        
     }
     
     
@@ -57,7 +46,7 @@ class ViewController: UIViewController {
         if err != nil {
             println("error: \(err?.localizedDescription)")
         }
-        
+        configureDevice()
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.view.layer.addSublayer(previewLayer)
         previewLayer?.frame = self.view.layer.frame
@@ -65,11 +54,28 @@ class ViewController: UIViewController {
         captureSession.startRunning()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func configureDevice() {
+        if let device = captureDevice {
+            
+            
+            for vFormat in captureDevice!.formats {
+                
+                var ranges = vFormat.videoSupportedFrameRateRanges as [AVFrameRateRange]
+                var frameRates = ranges[0]
+                
+                if frameRates.maxFrameRate == 60 {
+                    
+                    device.lockForConfiguration(nil)
+                    device.activeFormat = vFormat as AVCaptureDeviceFormat
+                    device.activeVideoMinFrameDuration = frameRates.minFrameDuration
+                    device.activeVideoMaxFrameDuration = frameRates.minFrameDuration
+                    device.unlockForConfiguration()
+                    
+                }
+            }
+        }
+        
     }
-
 
 }
 

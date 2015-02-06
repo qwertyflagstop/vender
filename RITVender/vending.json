@@ -71,4 +71,53 @@
         "longitude" : -77.6724,
         "snacks" : true
     }
+    "NRH" : {
+        "snacks" : true,
+        "floor" : 1,
+        "soda" : true,
+        "latitude" : 43.08499,
+        "longitude" : -77.66771,
+        "meals" : true
+    },
+    "Commons" : {
+        "snacks" : true,
+        "floor" : 3,
+        "soda" : true,
+        "latitude" : 43.08638,
+        "longitude" : -77.66841,
+        "meals" : false
+    },
+    "Gracies" : {
+        "meals" : true,
+        "snacks" : true,
+        "soda" : true,
+        "latitude" : 43.08399,
+        "longitude" : -77.66891,
+        "floor" : 2
+    },
+    "Gleason" : {
+        "floor" : 1,
+        "meals" : true,
+        "soda" : true,
+        "latitude" : 43.08389,
+        "longitude" : -77.67081,
+        "snacks" : true
+    },
+    "Sol" : {
+        "meals" : true,
+        "snacks" : true,
+        "soda" : true,
+        "latitude" : 43.08553,
+        "longitude" : -77.66737999999999,
+        "floor" : 1
+    },
+    "Ellingson ball" : {
+        "floor" : 1,
+        "meals" : true,
+        "soda" : true,
+        "latitude" : 43.08623,
+        "longitude" : -77.66804999999999,
+        "snacks" : true
+        
+    }
 }
