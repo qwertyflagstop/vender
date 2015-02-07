@@ -29,4 +29,23 @@ class Vending{
     func dictionary()->NSDictionary{
         return getDict(getString())
     }
+    
+    func machineArray(machineDict: NSDictionary)->NSMutableArray{
+        var mArray = NSMutableArray()
+        for key in machineDict.allKeys{
+            
+            var newDict: NSDictionary = machineDict.objectForKey(key) as NSDictionary
+            let title = key as NSString
+            let meals = newDict.objectForKey("meals") as NSNumber
+            let soda = newDict.objectForKey("soda") as NSNumber
+            let snacks = newDict.objectForKey("snacks") as NSNumber
+            let latitude = newDict.objectForKey("latitude") as NSNumber
+            let longitude = newDict.objectForKey("longitude") as NSNumber
+            let floor = newDict.objectForKey("floor") as NSNumber
+            
+            mArray.addObject(Machine(title: title, meals: meals, soda: soda, snacks: snacks, latitude: latitude, longitude: longitude, floor: floor))
+        }
+        return mArray
+    }
+    
 }

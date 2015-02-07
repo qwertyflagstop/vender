@@ -14,8 +14,10 @@ class ViewController: UIViewController {
     let captureSession: AVCaptureSession = AVCaptureSession();
     var captureDevice : AVCaptureDevice?
     var previewLayer : AVCaptureVideoPreviewLayer?
-
+    let vendingDict = [:]
     
+    let v1 = Machine(, title: NSString)
+    /*
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -40,7 +42,7 @@ class ViewController: UIViewController {
             beginSession()
         }
     }
-    
+    */
     //EYE
     func beginSession() {
         var err : NSError? = nil
