@@ -45,8 +45,7 @@ class ViewController: UIViewController {
         view.addSubview(blurEffectView)
         view.bringSubviewToFront(distanceLbl);
     }
-    */
-    //EYE
+    
     func beginSession() {
         var err : NSError? = nil
         captureSession.addInput(AVCaptureDeviceInput(device: captureDevice, error: &err))
