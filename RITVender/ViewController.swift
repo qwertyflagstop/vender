@@ -11,20 +11,20 @@ import AVFoundation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var distanceLbl: UILabel!
     let captureSession: AVCaptureSession = AVCaptureSession();
     var captureDevice : AVCaptureDevice?
     var previewLayer : AVCaptureVideoPreviewLayer?
-
+    var blurEffect : UIBlurEffect?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         captureSession.sessionPreset = AVCaptureSessionPresetHigh;
-    
+
         let devices = AVCaptureDevice.devices()
-        var Vender = Vending()
-        println(Vender.dictionary())
+       
         
         
         for device in devices {
@@ -39,6 +39,11 @@ class ViewController: UIViewController {
         if captureDevice != nil {
             beginSession()
         }
+        blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect!)
+        blurEffectView.frame = view.bounds //view is self.view in a UIViewController
+        view.addSubview(blurEffectView)
+        view.bringSubviewToFront(distanceLbl);
     }
     
     //EYE
