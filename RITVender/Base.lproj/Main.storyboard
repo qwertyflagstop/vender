@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,27 +16,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20 ft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jk2-lk-8XL">
-                                <rect key="frame" x="239" y="481" width="122" height="41"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="34"/>
-                                <color key="textColor" red="0.91372555494308472" green="0.48627454042434692" blue="0.1098039299249649" alpha="1" colorSpace="deviceRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 ft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jk2-lk-8XL">
+                                <rect key="frame" x="281" y="541" width="38" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.96595113942076927" blue="0.93974878777123305" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.97082062832307026" green="0.93858893522304909" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vending Machine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ce6-1A-kBT">
+                                <rect key="frame" x="178" y="39" width="244" height="41"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="34"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pzg-X1-WZJ">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="1Ty-V8-31t"/>
+                                    <constraint firstAttribute="height" constant="100" id="THN-ni-GMS"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.71847098214285721" green="0.71847098214285721" blue="0.71847098214285721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Jk2-lk-8XL" secondAttribute="centerX" constant="-0.5" id="RfM-GO-CPe"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Jk2-lk-8XL" secondAttribute="bottom" constant="78" id="UwJ-XZ-UOl"/>
-                            <constraint firstItem="Jk2-lk-8XL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="206" id="hgY-nF-HRq"/>
+                            <constraint firstAttribute="centerX" secondItem="Jk2-lk-8XL" secondAttribute="centerX" id="2fk-ZM-DUN"/>
+                            <constraint firstItem="Pzg-X1-WZJ" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Azi-xb-7jl"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Jk2-lk-8XL" secondAttribute="bottom" constant="35" id="Tm8-ul-yHD"/>
+                            <constraint firstAttribute="centerX" secondItem="ce6-1A-kBT" secondAttribute="centerX" id="U4X-SQ-EcM"/>
+                            <constraint firstItem="Pzg-X1-WZJ" firstAttribute="centerX" secondItem="ce6-1A-kBT" secondAttribute="centerX" id="oUN-an-rgE"/>
+                            <constraint firstItem="ce6-1A-kBT" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="19" id="wvV-4q-SyE"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="hgY-nF-HRq"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
+                        <outlet property="arrow" destination="Pzg-X1-WZJ" id="vyZ-W0-ZWJ"/>
                         <outlet property="distanceLbl" destination="Jk2-lk-8XL" id="AAt-Ed-V1Y"/>
+                        <outlet property="titleLbl" destination="ce6-1A-kBT" id="9Qe-sL-97p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -45,4 +57,7 @@
             <point key="canvasLocation" x="112" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow.png" width="362" height="541"/>
+    </resources>
 </document>

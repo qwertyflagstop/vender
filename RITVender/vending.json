@@ -47,14 +47,6 @@
         "longitude" : -77.67214,
         "meals" : false
     },
-    "Nick's Room" : {
-        "floor" : 1,
-        "meals" : true,
-        "soda" : true,
-        "latitude" : 43.08422,
-        "longitude" : -77.66905,
-        "snacks" : true
-    },
     "Ritter Arena Entrance " : {
         "snacks" : true,
         "floor" : 1,
@@ -70,7 +62,7 @@
         "latitude" : 43.08543,
         "longitude" : -77.6724,
         "snacks" : true
-    }
+    },
     "NRH" : {
         "snacks" : true,
         "floor" : 1,

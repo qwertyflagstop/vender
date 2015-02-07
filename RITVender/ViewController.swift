@@ -8,9 +8,12 @@
 
 import UIKit
 import AVFoundation
+import CoreLocation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var arrow: UIImageView!
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var distanceLbl: UILabel!
     let captureSession: AVCaptureSession = AVCaptureSession();
     var captureDevice : AVCaptureDevice?
@@ -45,16 +48,35 @@ class ViewController: UIViewController {
         blurEffectView.frame = view.bounds //view is self.view in a UIViewController
         view.addSubview(blurEffectView)
         view.bringSubviewToFront(distanceLbl);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "beginSession", name: "updateCompass", object: nil)
+        view.bringSubviewToFront(titleLbl);
+        view.bringSubviewToFront(arrow);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateHUD", name: "updateCompass", object: nil)
     }
     
     func updateHUD(){
-        distanceLbl.text = NSString(format: ".0f ft", finder.distanceToClosestMachine()!)
+        distanceLbl.text = NSString(format: "~%.0f Feet", finder.currentLocation.distanceFromLocation(finder.currentMachine?.location)*3.28084)
+        titleLbl.text = finder.currentMachine!.title
+        if finder.currentHeading != nil {
+            let angleFromCurrent :Float = finder.getHeadingFromLocToLoc(finder.currentLocation, to: finder.currentMachine!.location!)
+            let currentOffset: Float = -DegreesToRadians( NSNumber(double:finder.currentHeading!.trueHeading).floatValue )
+            let rotation = CGFloat(angleFromCurrent-currentOffset)
+            var transform = CGAffineTransformRotate(CGAffineTransformIdentity, -(rotation+0.5))
+            UIView.animateKeyframesWithDuration(0.05, delay: 0.0, options: nil
+                , animations: { () -> Void in
+                   self.arrow.transform = transform
+            }, completion: { (Bool) -> Void in
+            
+            })
+        }
+        
     }
     
     func beginSession() {
         var err : NSError? = nil
+
+        if(captureSession.canAddInput(AVCaptureDeviceInput(device: captureDevice, error: &err))){
         captureSession.addInput(AVCaptureDeviceInput(device: captureDevice, error: &err))
+        }
         
         if err != nil {
             println("error: \(err?.localizedDescription)")
@@ -89,6 +111,10 @@ class ViewController: UIViewController {
         }
         
     }
+    func DegreesToRadians (value:Float) -> Float {
+        return value * Float(M_PI) / Float(180.0)
+    }
+
 
 }
 

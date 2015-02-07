@@ -21,11 +21,11 @@ class Vending{
     }
     func getDict(fileString: NSString)->NSDictionary{
         if let fileData = fileString.dataUsingEncoding(NSUTF8StringEncoding){
-            let jsonData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("vending",ofType:"json")!, options: nil, error: nil)
-            if let dict = NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
+            let jsonData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("vending",ofType:"json")!, options: nil, error: nil)!
+            
+            if let dict = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: nil) as? NSDictionary {
                 return dict
             }else{
-                print(dict)
                 return [:]
             }
         }
