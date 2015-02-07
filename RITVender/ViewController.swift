@@ -15,10 +15,8 @@ class ViewController: UIViewController {
     let captureSession: AVCaptureSession = AVCaptureSession();
     var captureDevice : AVCaptureDevice?
     var previewLayer : AVCaptureVideoPreviewLayer?
-    let vendingDict = [:]
+    var blurEffect : UIBlurEffect?
     
-    let v1 = Machine(, title: NSString)
-    /*
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
