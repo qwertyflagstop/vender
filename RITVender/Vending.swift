@@ -10,28 +10,35 @@ import Foundation
 
 class Vending{
     
-    func getString() ->NSString{
+    
+    func getString() ->NSString?{
         //String Function; returns json string
         if let filePath = NSBundle.mainBundle().pathForResource("vending",ofType:"json") {
-            return String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding, error: nil)!
+            return NSString(contentsOfFile: filePath, encoding: NSUTF8StringEncoding, error: nil)!
         } else {
             return ""
         }
     }
     func getDict(fileString: NSString)->NSDictionary{
         if let fileData = fileString.dataUsingEncoding(NSUTF8StringEncoding){
-            let fileDict = NSJSONSerialization.JSONObjectWithData(fileData, options: nil, error: nil) as NSDictionary
-            return fileDict
+            let jsonData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("vending",ofType:"json")!, options: nil, error: nil)
+            if let dict = NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
+                return dict
+            }else{
+                print(dict)
+                return [:]
+            }
         }
         return [:]
     }
     
     func dictionary()->NSDictionary{
-        return getDict(getString())
+        return getDict(getString()!)
     }
     
-    func machineArray(machineDict: NSDictionary)->NSMutableArray{
+    func machineArray()->NSMutableArray{
         var mArray = NSMutableArray()
+        var machineDict: NSDictionary = dictionary()
         for key in machineDict.allKeys{
             
             var newDict: NSDictionary = machineDict.objectForKey(key) as NSDictionary

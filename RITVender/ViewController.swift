@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var captureDevice : AVCaptureDevice?
     var previewLayer : AVCaptureVideoPreviewLayer?
     var blurEffect : UIBlurEffect?
+    let finder:MachineFinder=MachineFinder();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +40,16 @@ class ViewController: UIViewController {
         if captureDevice != nil {
             beginSession()
         }
-        blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect!)
         blurEffectView.frame = view.bounds //view is self.view in a UIViewController
         view.addSubview(blurEffectView)
         view.bringSubviewToFront(distanceLbl);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "beginSession", name: "updateCompass", object: nil)
+    }
+    
+    func updateHUD(){
+        distanceLbl.text = NSString(format: ".0f ft", finder.distanceToClosestMachine()!)
     }
     
     func beginSession() {

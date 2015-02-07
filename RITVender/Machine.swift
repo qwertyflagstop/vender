@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreLocation
 class Machine{
     
     var meals: Bool?
@@ -17,6 +17,7 @@ class Machine{
     var longitude: Double?
     var floor: Int?
     var title: NSString?
+    var location: CLLocation?
     
     init(title: NSString, meals: NSNumber, soda: NSNumber, snacks: NSNumber, latitude: NSNumber, longitude: NSNumber, floor: NSNumber){
         self.title = title
@@ -26,7 +27,7 @@ class Machine{
         self.latitude = latitude.doubleValue
         self.longitude = longitude.doubleValue
         self.floor = floor.integerValue
-        
+        location = CLLocation(latitude: self.latitude!, longitude: self.longitude!)
     }
     
 }
