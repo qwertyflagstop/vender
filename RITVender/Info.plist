@@ -35,6 +35,8 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To find the nearest vending machine</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -12,6 +12,9 @@ import CoreLocation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var food: UIImageView!
+    @IBOutlet weak var soda: UIImageView!
+    @IBOutlet weak var candy: UIImageView!
     @IBOutlet weak var floorLbl: UILabel!
     @IBOutlet weak var arrow: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
@@ -25,13 +28,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         captureSession.sessionPreset = AVCaptureSessionPresetHigh;
-
         let devices = AVCaptureDevice.devices()
-       
-        
-        
         for device in devices {
             if (device.hasMediaType(AVMediaTypeVideo)) {
                 if(device.position == AVCaptureDevicePosition.Back) {
@@ -52,6 +51,9 @@ class ViewController: UIViewController {
         view.bringSubviewToFront(titleLbl);
         view.bringSubviewToFront(arrow);
         view.bringSubviewToFront(floorLbl)
+        view.bringSubviewToFront(soda)
+        view.bringSubviewToFront(food)
+        view.bringSubviewToFront(candy)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateHUD", name: "updateCompass", object: nil)
     }
     
@@ -60,7 +62,7 @@ class ViewController: UIViewController {
             return
         }
         
-        distanceLbl.text = NSString(format: "~%.0f Feet", finder.distanceLeft())
+        distanceLbl.text = NSString(format: "~%.0f Feet Away", finder.distanceLeft())
         titleLbl.text = finder.currentMachine!.title
         switch finder.currentMachine!.floor! {
         case -1 :
@@ -78,6 +80,9 @@ class ViewController: UIViewController {
         default:
             println()
         }
+        candy.hidden = !finder.currentMachine!.snacks!
+        soda.hidden = !finder.currentMachine!.soda!
+        food.hidden = !finder.currentMachine!.meals!
         if finder.currentHeading != nil {
             let angleFromCurrent :Float = finder.getHeadingFromLocToLoc(finder.currentLocation!, to: finder.currentMachine!.location!)
             let currentOffset: Float = -DegreesToRadians( NSNumber(double:finder.currentHeading!.trueHeading).floatValue )

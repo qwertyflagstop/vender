@@ -17,47 +17,80 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="????" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jk2-lk-8XL">
-                                <rect key="frame" x="279" y="541" width="42" height="24"/>
+                                <rect key="frame" x="230" y="541" width="140" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="QeY-7A-iKc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.96595113942076927" blue="0.93974878777123305" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.97082062832307026" green="0.93858893522304909" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locating Machine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ce6-1A-kBT">
-                                <rect key="frame" x="175" y="39" width="250" height="41"/>
+                                <rect key="frame" x="175" y="55" width="250" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pzg-X1-WZJ">
-                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <rect key="frame" x="250" y="281" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="1Ty-V8-31t"/>
-                                    <constraint firstAttribute="height" constant="100" id="THN-ni-GMS"/>
+                                    <constraint firstAttribute="height" constant="100" id="LL6-Ra-B1M"/>
+                                    <constraint firstAttribute="width" constant="100" id="yxV-uK-0kz"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1st floor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaJ-NG-ArJ">
-                                <rect key="frame" x="264" y="88" width="73" height="26"/>
+                                <rect key="frame" x="264" y="507" width="73" height="26"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="candy.png" translatesAutoresizingMaskIntoConstraints="NO" id="AEK-Cx-w6C">
+                                <rect key="frame" x="237" y="107" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="Owy-mM-BrZ"/>
+                                    <constraint firstAttribute="height" constant="37" id="jOi-nF-hjU"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sodaW.png" translatesAutoresizingMaskIntoConstraints="NO" id="hnu-66-bFT">
+                                <rect key="frame" x="282" y="107" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="eRv-pE-bia"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger.png" translatesAutoresizingMaskIntoConstraints="NO" id="1au-2Y-IkV">
+                                <rect key="frame" x="327" y="107" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="6wQ-93-ysP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.71847098214285721" green="0.71847098214285721" blue="0.71847098214285721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Jk2-lk-8XL" secondAttribute="centerX" id="2fk-ZM-DUN"/>
-                            <constraint firstItem="Pzg-X1-WZJ" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Azi-xb-7jl"/>
-                            <constraint firstAttribute="centerX" secondItem="JaJ-NG-ArJ" secondAttribute="centerX" constant="-0.5" id="Odc-Ke-feo"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Jk2-lk-8XL" secondAttribute="bottom" constant="35" id="Tm8-ul-yHD"/>
-                            <constraint firstAttribute="centerX" secondItem="ce6-1A-kBT" secondAttribute="centerX" id="U4X-SQ-EcM"/>
-                            <constraint firstItem="Pzg-X1-WZJ" firstAttribute="centerX" secondItem="ce6-1A-kBT" secondAttribute="centerX" id="oUN-an-rgE"/>
-                            <constraint firstItem="JaJ-NG-ArJ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="68" id="uho-QH-Adf"/>
-                            <constraint firstItem="ce6-1A-kBT" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="19" id="wvV-4q-SyE"/>
+                            <constraint firstItem="AEK-Cx-w6C" firstAttribute="top" secondItem="ce6-1A-kBT" secondAttribute="bottom" constant="11" id="1Ux-xN-eRe"/>
+                            <constraint firstItem="AEK-Cx-w6C" firstAttribute="top" secondItem="hnu-66-bFT" secondAttribute="top" id="C0W-ey-EEO"/>
+                            <constraint firstItem="1au-2Y-IkV" firstAttribute="top" secondItem="hnu-66-bFT" secondAttribute="top" id="Dje-5D-4MY"/>
+                            <constraint firstItem="1au-2Y-IkV" firstAttribute="leading" secondItem="hnu-66-bFT" secondAttribute="trailing" constant="8" symbolic="YES" id="FIR-He-RXv"/>
+                            <constraint firstItem="Pzg-X1-WZJ" firstAttribute="centerX" secondItem="hnu-66-bFT" secondAttribute="centerX" id="IoC-qn-Krw"/>
+                            <constraint firstItem="JaJ-NG-ArJ" firstAttribute="centerX" secondItem="Jk2-lk-8XL" secondAttribute="centerX" id="Ire-Kn-EeK"/>
+                            <constraint firstItem="Pzg-X1-WZJ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Nck-mq-nn0"/>
+                            <constraint firstItem="JaJ-NG-ArJ" firstAttribute="centerX" secondItem="Pzg-X1-WZJ" secondAttribute="centerX" id="UUv-Rb-QKO"/>
+                            <constraint firstItem="Pzg-X1-WZJ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="281" id="Xz3-Gt-oo9"/>
+                            <constraint firstItem="AEK-Cx-w6C" firstAttribute="bottom" secondItem="hnu-66-bFT" secondAttribute="bottom" id="Y1U-ec-gL4"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Jk2-lk-8XL" secondAttribute="bottom" constant="35" id="a88-MT-3Cp"/>
+                            <constraint firstItem="ce6-1A-kBT" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="35" id="bfJ-7W-WGn"/>
+                            <constraint firstItem="hnu-66-bFT" firstAttribute="centerX" secondItem="ce6-1A-kBT" secondAttribute="centerX" id="f5f-TC-Iuo"/>
+                            <constraint firstItem="hnu-66-bFT" firstAttribute="leading" secondItem="AEK-Cx-w6C" secondAttribute="trailing" constant="8" symbolic="YES" id="jK6-I1-76C"/>
+                            <constraint firstItem="hnu-66-bFT" firstAttribute="bottom" secondItem="1au-2Y-IkV" secondAttribute="bottom" id="nbh-HR-sO4"/>
+                            <constraint firstItem="Jk2-lk-8XL" firstAttribute="top" secondItem="JaJ-NG-ArJ" secondAttribute="bottom" constant="8" symbolic="YES" id="r25-x9-rnw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="arrow" destination="Pzg-X1-WZJ" id="vyZ-W0-ZWJ"/>
+                        <outlet property="candy" destination="AEK-Cx-w6C" id="yUk-zv-2EP"/>
                         <outlet property="distanceLbl" destination="Jk2-lk-8XL" id="AAt-Ed-V1Y"/>
                         <outlet property="floorLbl" destination="JaJ-NG-ArJ" id="wNk-xR-Dzr"/>
+                        <outlet property="food" destination="1au-2Y-IkV" id="x6e-v3-azk"/>
+                        <outlet property="soda" destination="hnu-66-bFT" id="tig-i3-gFG"/>
                         <outlet property="titleLbl" destination="ce6-1A-kBT" id="9Qe-sL-97p"/>
                     </connections>
                 </viewController>
@@ -68,5 +101,8 @@
     </scenes>
     <resources>
         <image name="arrow.png" width="362" height="541"/>
+        <image name="burger.png" width="350" height="350"/>
+        <image name="candy.png" width="297" height="299"/>
+        <image name="sodaW.png" width="158" height="158"/>
     </resources>
 </document>
