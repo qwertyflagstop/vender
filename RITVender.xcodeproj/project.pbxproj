@@ -16,7 +16,6 @@
 		0170FD361A842CA9007D4B76 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170FD351A842CA9007D4B76 /* AVFoundation.framework */; };
 		019A2A891A85AEE100743D5B /* MachineFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A2A881A85AEE100743D5B /* MachineFinder.swift */; };
 		019A2A8D1A85E7F200743D5B /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 019A2A8C1A85E7F200743D5B /* arrow.png */; };
-		019A2A8F1A869E5700743D5B /* Walk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A2A8E1A869E5700743D5B /* Walk.swift */; };
 		01E23C381A8592FE0083798A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E23C371A8592FE0083798A /* CoreLocation.framework */; };
 		7DADF6021A84425700E539E5 /* vending.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DADF6011A84425700E539E5 /* vending.json */; };
 		7DBE18AF1A843DED00F4A60D /* Vending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBE18AE1A843DED00F4A60D /* Vending.swift */; };
@@ -47,7 +46,6 @@
 		0170FD351A842CA9007D4B76 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		019A2A881A85AEE100743D5B /* MachineFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MachineFinder.swift; sourceTree = "<group>"; };
 		019A2A8C1A85E7F200743D5B /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
-		019A2A8E1A869E5700743D5B /* Walk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walk.swift; sourceTree = "<group>"; };
 		01E23C371A8592FE0083798A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7DADF6011A84425700E539E5 /* vending.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vending.json; sourceTree = "<group>"; };
 		7DBE18AE1A843DED00F4A60D /* Vending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vending.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				0170FD151A842AA9007D4B76 /* AppDelegate.swift */,
 				0170FD171A842AA9007D4B76 /* ViewController.swift */,
 				019A2A881A85AEE100743D5B /* MachineFinder.swift */,
-				019A2A8E1A869E5700743D5B /* Walk.swift */,
 				7DFEFF1A1A857BFA00DD9706 /* Machine.swift */,
 				7DBE18AE1A843DED00F4A60D /* Vending.swift */,
 				019A2A8C1A85E7F200743D5B /* arrow.png */,
@@ -252,7 +249,6 @@
 				7DBE18AF1A843DED00F4A60D /* Vending.swift in Sources */,
 				7DFEFF1B1A857BFA00DD9706 /* Machine.swift in Sources */,
 				0170FD181A842AA9007D4B76 /* ViewController.swift in Sources */,
-				019A2A8F1A869E5700743D5B /* Walk.swift in Sources */,
 				0170FD161A842AA9007D4B76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

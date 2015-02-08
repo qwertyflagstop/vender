@@ -12,6 +12,7 @@ import CoreLocation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var floorLbl: UILabel!
     @IBOutlet weak var arrow: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var distanceLbl: UILabel!
@@ -50,17 +51,38 @@ class ViewController: UIViewController {
         view.bringSubviewToFront(distanceLbl);
         view.bringSubviewToFront(titleLbl);
         view.bringSubviewToFront(arrow);
+        view.bringSubviewToFront(floorLbl)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateHUD", name: "updateCompass", object: nil)
     }
     
     func updateHUD(){
-        distanceLbl.text = NSString(format: "~%.0f Feet", finder.currentLocation.distanceFromLocation(finder.currentMachine?.location)*3.28084)
+        if finder.currentLocation == nil {
+            return
+        }
+        
+        distanceLbl.text = NSString(format: "~%.0f Feet", finder.distanceLeft())
         titleLbl.text = finder.currentMachine!.title
+        switch finder.currentMachine!.floor! {
+        case -1 :
+        floorLbl.text = "Basement"
+        case 0 :
+            floorLbl.text = "Basement"
+        case 1 :
+            floorLbl.text = "Ground Level"
+        case 2 :
+            floorLbl.text = "2nd Floor"
+        case 3 :
+            floorLbl.text = "3rd Floor"
+        case 4 :
+            floorLbl.text = "4th Floor"
+        default:
+            println()
+        }
         if finder.currentHeading != nil {
-            let angleFromCurrent :Float = finder.getHeadingFromLocToLoc(finder.currentLocation, to: finder.currentMachine!.location!)
+            let angleFromCurrent :Float = finder.getHeadingFromLocToLoc(finder.currentLocation!, to: finder.currentMachine!.location!)
             let currentOffset: Float = -DegreesToRadians( NSNumber(double:finder.currentHeading!.trueHeading).floatValue )
             let rotation = CGFloat(angleFromCurrent-currentOffset)
-            var transform = CGAffineTransformRotate(CGAffineTransformIdentity, -(rotation+0.5))
+            var transform = CGAffineTransformRotate(CGAffineTransformIdentity, -(rotation))
             UIView.animateKeyframesWithDuration(0.05, delay: 0.0, options: nil
                 , animations: { () -> Void in
                    self.arrow.transform = transform

@@ -18,7 +18,8 @@ class MachineFinder:NSObject, CLLocationManagerDelegate {
     var currentHeading: CLHeading?;
     var currentMachine: Machine?;
     var started:Bool;
-    
+    var initalDistance: Double?;
+    var mostRecentLocation: CLLocation?
     override init(){
         self.started = false;
         self.locations = [];
@@ -26,49 +27,47 @@ class MachineFinder:NSObject, CLLocationManagerDelegate {
         manager = CLLocationManager();
         manager.delegate = self;
         manager.distanceFilter = kCLDistanceFilterNone
-    
-        manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        manager.activityType = CLActivityType.OtherNavigation
+        manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization();
         manager.startUpdatingLocation();
         manager.startUpdatingHeading();
     }
     func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {
         currentHeading = newHeading
-        //println( DegreesToRadians(currentHeading!.trueHeading) )
         refresh()
     }
+    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
+        if newLocation.horizontalAccuracy<0 {
+            return
+        }
+        if newLocation.timestamp.timeIntervalSinceNow > 5.0 {
+            return
+        }
+        mostRecentLocation = newLocation;
+        refresh()
+    }
+    
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var location:CLLocation = locations[locations.count-1] as CLLocation
-        if location.horizontalAccuracy > -1{
-        self.locations.append(location)
+        if location.horizontalAccuracy < -0.5{
+                return
+        }
+        
         if !started {
+            self.locations.append(location)
             currentMachine = closestMachine();
             started=true
-        }
-        refresh()
+            initalDistance = location.distanceFromLocation(currentMachine?.location)
+        } else {
+            self.locations.append(location)
+            refresh()
         }
     }
-    func refresh(){
-        
-        updateCompass()
-    }
-    var currentLocation: CLLocation{
+    
+    var currentLocation: CLLocation?{
         get
         {
-            let count = 20
-            if locations.count<count {
-                return locations.last!
-            }else{
-                var totalLat = 0.0;
-                var totalLng = 0.0;
-                for index in 1...count {
-                    let current = locations[locations.count-index] as CLLocation
-                    totalLat = totalLat+current.coordinate.latitude;
-                    totalLng = totalLng+current.coordinate.longitude;
-                }
-                return CLLocation(latitude: (totalLat/Double(count))*0.3+locations.last!.coordinate.latitude*0.7, longitude: (totalLng/Double(count))*0.3+locations.last!.coordinate.longitude*0.7)
-            }
+          return locations.last
             
         }
     }
@@ -83,7 +82,9 @@ class MachineFinder:NSObject, CLLocationManagerDelegate {
     func DegreesToRadians (value:Float) -> Float {
         return value * Float(M_PI) / Float(180.0)
     }
-    
+    func refresh(){
+        updateCompass()
+    }
     func updateCompass(){
         NSNotificationCenter.defaultCenter().postNotificationName("updateCompass", object:self)
     }
@@ -100,5 +101,8 @@ class MachineFinder:NSObject, CLLocationManagerDelegate {
             }
         }
         return closestMachine!
+    }
+    func distanceLeft()->Float{
+        return Float(currentLocation!.distanceFromLocation(currentMachine?.location))*3.28084
     }
 }
